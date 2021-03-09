@@ -32,4 +32,4 @@ let pokemonList = [{
   },
 
 ]
-document.write(pokemonList)
+document.write(pokemonList.map((poke) => poke.name));
