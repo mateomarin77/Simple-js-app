@@ -39,7 +39,7 @@
 
   ]
 
-  // Pokemon Loop and write the list to HTML
+  // Pokemon Loop and write the output to HTML
   // Highlight special Pokemons by size
 
   for (let i=0; i < pokemonList.length; i++){
