@@ -39,15 +39,28 @@
 
   ]
 
-  // Pokemon Loop and write the output to HTML
+  //IIFE pokemonRepository
+
+  let pokemonRepository = (function () {
+   return {
+      add: function(pokemon) {
+        pokemonList.push(pokemon);
+      },
+      getAll: function() {
+        return pokemonList;
+      }
+    };
+  })();
+
+  // Pokemon Loop using forEach and write the output to HTML
   // Highlight special Pokemons by size
 
-  for (let i=0; i < pokemonList.length; i++){
-    if (pokemonList[i].weight > 500 && pokemonList[i].weight < 1000) {
-      document.write(`${(pokemonList[i].name)} - Height: ${pokemonList[i].height}cm Weight: ${pokemonList[i].weight} lbs  <br/><br/><strong> THIS IS A HEAVY POKEMON!!!</strong> </span><br/> <br/>`);
-    } else if (pokemonList[i].weight > 1000) {
-      document.write(`${(pokemonList[i].name)} - Height: ${pokemonList[i].height}cm Weight: ${pokemonList[i].weight} lbs  <br/><br/><strong>THIS IS THE HEAVIEST POKEMON!!! </strong><br/> <br/>`);
-    } else {
-      document.write(`${(pokemonList[i].name)} - Height: ${pokemonList[i].height}cm Weight: ${pokemonList[i].weight} lbs <br/> <br/>`);
-    }
-  };
+  pokemonList.forEach(function(pokemon) {
+  if (pokemon.weight > 500 && pokemon.weight < 1000) {
+    document.write(`${(pokemon.name)} - Height: ${pokemon.height}cm - Weight: ${pokemon.weight} lbs - Now that is heavy! <br/> <br/>`);
+  } else if (pokemon.weight > 1000) {
+    document.write(`${(pokemon.name)} - Height: ${pokemon.height}cm - Weight: ${pokemon.weight} lbs - Whoa IT'S HUGE!!! <br/> <br/>`);
+  } else {
+    document.write(`${(pokemon.name)} - Height: ${pokemon.height}cm - Weight: ${pokemon.weight} lbs <br/> <br/>`);
+  }
+});
