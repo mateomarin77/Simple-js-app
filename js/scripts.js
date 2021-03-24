@@ -1,66 +1,75 @@
-  // Pokemon List Variable
 
-  let pokemonList = [{
-      name: 'Magnemite',
-      height: '0.3',
-      type: ['electric', 'steel'],
-      weight: ['20'],
+// Pokemon list variable
+
+let pokemonRepository = (function () {
+  let repository = [
+    {
+      name: "Bulbasaur",
+      height: 0.7,
+      types: ["grass", "poison"],
     },
     {
-      name: 'Squirtle',
-      height: '1.5',
-      type: ['water', 'poison'],
-      weight: ['50'],
+      name: "Charizard",
+      height: 1.7,
+      types: ["fire", "flying"],
     },
     {
-      name: 'Blastoise',
-      height: '1.6',
-      type: ['water', 'poison'],
-      weight: ['12'],
+      name: "Squirtle",
+      height: 1,
+      types: ["water"],
     },
-    {
-      name: 'Charmander',
-      height: '0.6',
-      type: ['fire'],
-      weight: ['1020'],
-    },
-    {
-      name: 'Charmeleon',
-      height: '1.1',
-      type: ['fire'],
-      weight: ['40'],
-    },
-    {
-      name: 'Charizard',
-      height: '1.7',
-      type: ['fire'],
-      weight: ['520'],
-    },
+  ];
 
-  ]
+  // function add pokemon
 
-  //IIFE pokemonRepository
-
-  let pokemonRepository = (function () {
-   return {
-      add: function(pokemon) {
-        pokemonList.push(pokemon);
-      },
-      getAll: function() {
-        return pokemonList;
-      }
-    };
-  })();
-
-  // Pokemon Loop using forEach and write the output to HTML
-  // Highlight special Pokemons by size
-
-  pokemonList.forEach(function(pokemon) {
-  if (pokemon.weight > 500 && pokemon.weight < 1000) {
-    document.write(`${(pokemon.name)} - Height: ${pokemon.height}cm - Weight: ${pokemon.weight} lbs - Now that is heavy! <br/> <br/>`);
-  } else if (pokemon.weight > 1000) {
-    document.write(`${(pokemon.name)} - Height: ${pokemon.height}cm - Weight: ${pokemon.weight} lbs - Whoa IT'S HUGE!!! <br/> <br/>`);
-  } else {
-    document.write(`${(pokemon.name)} - Height: ${pokemon.height}cm - Weight: ${pokemon.weight} lbs <br/> <br/>`);
+  function add(pokemon) {
+    if (
+      typeof pokemon === "object" &&
+      "name" in pokemon &&
+      "height" in pokemon &&
+      "types" in pokemon
+    ) {
+      repository.push(pokemon);
+    } else {
+      console.log("pokemon is not correct");
+    }
   }
+  function getAll() {
+    return repository;
+  }
+
+  // Add buttons and Style + Event listener
+
+  function addListItem(pokemon){
+    let pokemonList = document.querySelector(".pokemon-list");
+    let listpokemon = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("button-class");
+    listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
+    button.addEventListener("click", function(event){
+      showDetails(pokemon)
+    })
+  };
+
+
+  // showDetails function
+
+  function showDetails(pokemon){
+    console.log(pokemon);
+  }
+  return {
+    add: add,
+    getAll: getAll,
+    addListItem: addListItem
+  };
+})();
+
+pokemonRepository.add({ name: "Pikachu", height: 0.3, types: ["electric"] });
+
+console.log(pokemonRepository.getAll());
+
+pokemonRepository.getAll().forEach(function (pokemon) {
+  pokemonRepository.addListItem(pokemon);
 });
