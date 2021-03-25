@@ -42,9 +42,9 @@ let pokemonRepository = (function () {
 
   function addListItem(pokemon){
     let pokemonList = document.querySelector(".pokemon-list");
-    let listpokemon = document.createElement("li");
+    let listpokemon = document.createElement("card");
     let button = document.createElement("button");
-    button.innerText = pokemon.name;
+    button.innerText = pokemon.name + ' : ' +  pokemon.height + ' Cm ';
     button.classList.add("button-class");
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
@@ -57,8 +57,14 @@ let pokemonRepository = (function () {
   // showDetails function
 
   function showDetails(pokemon){
-    console.log(pokemon);
+    console.log(button.innerText);
+
+
   }
+
+
+  // key variable to access the IIEF
+
   return {
     add: add,
     getAll: getAll,
