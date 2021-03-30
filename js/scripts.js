@@ -20,7 +20,7 @@ let pokemonRepository = (function () {
     },
   ];
 
-  // function add pokemon
+  // function add pokemonn
 
   function add(pokemon) {
     if (
