@@ -49,6 +49,17 @@ ul {
   line-height: 50px;
 }
 
+/* Loading GIF */
+.loadingImage{
+  display: none;
+  margin-top: 150px;
+}
+
+.show{
+ display: block;
+}
+
+
 #modal-container {
   position: fixed;
   padding: 20px;
