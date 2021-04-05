@@ -221,9 +221,7 @@ let pokemonRepository = (function () {
     loadList: loadList,
     loadDetails: loadDetails,
     showDetails: showDetails,
-    showModal: showModal,
-    showLoadingMessage: showLoadingMessage,
-    hideLoadingMessage: hideLoadingMessage
+    showModal: showModal
   };
 })();
 
