@@ -44,20 +44,13 @@ ul {
 }
 
 .addPokemon{
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   text-align: center;
   line-height: 50px;
+  display: inline;
+
 }
 
-/* Loading GIF */
-.loadingImage{
-  display: none;
-  margin-top: 150px;
-}
-
-.show{
- display: block;
-}
 
 
 #modal-container {

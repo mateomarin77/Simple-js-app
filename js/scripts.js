@@ -12,7 +12,7 @@ let pokemonRepository = (function () {
 
   // Return list of Pokemon
   function getAll() {
-  return pokemonList;
+    return pokemonList;
   }
 
   // event listener for showDetails
@@ -30,7 +30,7 @@ let pokemonRepository = (function () {
     listpokemon.classList.add('group-list-item');
 
 
-  // Display pokemon in button
+    // Display pokemon in button
 
     let button = document.createElement("button");
     button.innerText = pokemon.name;
@@ -47,9 +47,11 @@ let pokemonRepository = (function () {
 
 
     // Add event listener to button
+
     button.addEventListener("click", function(event) {
 
       // showDetails(pokemon);
+
       loadDetails(pokemon).then(function() {
         let pokemonName = pokemon.name;
         let pokemonDesc = pokemon.height;
@@ -60,28 +62,11 @@ let pokemonRepository = (function () {
         showModal(pokemonName, pokemonType, pokemonWeight, pokemonUrl );
       })
 
-});
+    });
 
-
-
-
-  }
-
-  // Displays Loading GIF in site
-  function showLoadingMessage() {
-    loadImage = document.querySelector(".loadingImage");
-    loadImage.classList.add("show");
-  }
-
-  // Hides Loading GIF in site
-  function hideLoadingMessage() {
-    loadImage = document.querySelector(".loadingImage");
-    loadImage.classList.remove("show");
   }
 
   // Modal window function
-
-
 
   document.querySelector('#show-modal').addEventListener('click', () => {
     showModal();
@@ -110,7 +95,7 @@ let pokemonRepository = (function () {
     let contentElement = document.createElement('p');
     contentElement.innerText = "Type: " + text;
     let pokemonWeight = document.createElement("p");
-    pokemonWeight.innerText = "Weight: " + weight;
+    pokemonWeight.innerText = "Weight: " + weight + "Kg";
 
 
     let modalImage = document.createElement("img");
@@ -119,26 +104,17 @@ let pokemonRepository = (function () {
 
 
 
-
-
-
-
-
-
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
     modal.appendChild(contentElement);
     modal.appendChild(pokemonWeight);
     modal.appendChild(modalImage);
-
-
     modalContainer.appendChild(modal);
-
-
 
     modalContainer.classList.add('is-visible');
   }
 
+  // Close modal
 
   window.addEventListener('keydown', (e) => {
     let modalContainer = document.querySelector('#modal-container');
@@ -146,8 +122,6 @@ let pokemonRepository = (function () {
       hideModal();
     }
     modalContainer.addEventListener('click', (e) => {
-      // Since this is also triggered when clicking INSIDE the modal
-      // We only want to close if the user clicks directly on the overlay
       let target = e.target;
       if (target === modalContainer) {
         hideModal();
@@ -210,8 +184,6 @@ let pokemonRepository = (function () {
     });
   }
 
-
-
   // key variable to access the IIEF
 
   return {
@@ -248,9 +220,40 @@ function getPokemon(){
   }
 }
 
+//validate forms
+
+
+
 
 pokemonRepository.loadList().then(function () {
   pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
   });
 });
+
+(function() {
+  let form = document.querySelector('#addPokemon');
+  let emailInput = document.querySelector('#newPokemon');
+  let passwordInput = document.querySelector('#newPokemonHeight');
+
+  function validateEmail() {
+
+    return false;
+  }
+
+  function validatePassword() {
+
+    return false;
+  }
+
+  function validateForm() {
+    return validateEmail() && validatePassword();
+  }
+
+  form.addEventListener('add', (e) => {
+    e.preventDefault(); // Do not submit to the server
+    if (validateForm()) {
+      alert('Success!');
+    }
+  })
+})();
