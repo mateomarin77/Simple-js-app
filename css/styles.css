@@ -6,23 +6,20 @@ body {
   font-size:1vw;
 
 }
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 img {
-  width: 50%;
+  width: 35%;
   height: auto;
 }
 
 ul {
   list-style-type: none;
 }
-/* Loading GIF */
-.loadingImage{
-  display: none;
-  margin-top: 150px;
-}
 
-.show{
- display: block;
-}
 .button-class {
   font-family: 'Press Start 2P', cursive;
   background-color: #f2c005;
@@ -43,13 +40,99 @@ ul {
   border: 2px solid #396bba;
 }
 
+.button-class:hover {
+  background-color: #296CDB;
+  color:white;
+}
+
+.button-class:focus {
+  background-color: #0F52C1;
+
+  /* The outline parameter suppresses the border
+  color / outline when focused */
+  outline: 0;
+}
+
+.button-class:active {
+  background-color: #0039A8;
+}
+
 .addPokemon{
   margin-bottom: 20px;
   text-align: center;
   line-height: 50px;
-  display: inline;
+
 
 }
+
+input[type=text] {
+  padding:10px;
+  margin:10px 0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  border-radius:10px;
+  border:0;
+  border-bottom:1px solid #296CDB;
+  font-family:inherit;
+  width: 150px;
+  height: 20px;
+  font-size: 8px;
+
+}
+
+label {
+  font-size: 10px;
+}
+
+::placeholder {
+
+  font-size: 8px;
+}
+
+.addNewPokemon{
+  background-color:#FFE030;
+  border-radius:5px;
+
+}
+
+
+#subButton {
+
+  /* remove default behavior */
+  appearance:none;
+  -webkit-appearance:none;
+
+  /* usual styles */
+  padding:10px;
+  border:none;
+  background-color:#396BBA;
+  color:#fff;
+
+  border-radius:10px;
+  width:10%;
+  font-family: inherit;
+  display:inline;
+  font-size:9px;
+
+}
+
+#subButton:hover {
+  background-color: #296CDB;
+  color:#f2c005;
+}
+
+#subButton:focus {
+  background-color: #0F52C1;
+
+  /* The outline parameter suppresses the border
+  color / outline when focused */
+  outline: 0;
+}
+
+#subButton:active {
+  background-color: #0039A8;
+}
+
+
 
 
 
@@ -61,7 +144,10 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+
+
+
 
   /* to show it above other content */
   z-index: 999;
@@ -71,7 +157,7 @@ ul {
 
   /* this is used to center the modal */
   display: grid;
-  text-align: center;
+
 }
 
 .modal {
@@ -82,7 +168,10 @@ ul {
   padding: 15px;
   width: 100%;
   max-width: 700px;
-  text-align: left;
+
+  border-style: solid;
+  border-color: #FFE030;
+  border-width: 50px;
 }
 
 .modal-close {
@@ -96,10 +185,12 @@ ul {
 
 .modal-title h1 {
   margin-top: 0;
+  font-style: oblique;
 }
 
 .modal p {
   margin-bottom: 0;
+
 }
 
 #modal-container {
@@ -124,5 +215,11 @@ ul {
 
   /* this is used to center the modal */
   display: grid;
-  text-align: center;
+
+}
+
+/*.pokemon-content{
+background-color:red;
+width:50%;
+align:center;
 }

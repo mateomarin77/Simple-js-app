@@ -12,18 +12,20 @@
   <img src="images/app-logo.png"></br></br></br>
   <section class="addNewPokemon">
     <form class="addPokemon" action="index.html" method="post">
-      <label id="newPokemonLabel" for="newPokemon">Add Pokemon name</label>
-      <input id="newPokemon" type="text" name="#" value=""> <br>
-      <label id="PokemonLabelHeight" for="newPokemonHeight">Add Pokemon height</label>
-      <input id="newPokemonHeight" type="text" name="#" value="">
-      <div class="newPokemonSub">
+      <label id="newPokemonLabel" for="newPokemon">Name:</label>
+      <input id="newPokemon" type="text" placeholder="Pokemon name" name="#" value="">
+      <label id="PokemonLabelHeight" for="newPokemonHeight">Height:</label>
+      <input id="newPokemonHeight" placeholder="Pokemon height" type="text" name="#" value="">
+
         <button type="button" id="subButton" onclick="getPokemon()">Add</button>
-      </div>
+
     </form>
     <div>
       <p id="result"></p>
     </div>
   </section>
+
+  <section class="pokemon-content">
   <ul class='pokemon-list'></ul>
 
 
@@ -35,7 +37,7 @@
     </div>
   </div>
 
-
+</section>
   <script src="js/promise-polyfill.js"></script>
   <script src="js/fetch-polyfill.js"></script>
   <script src="js/scripts.js"></script>
