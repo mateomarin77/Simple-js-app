@@ -26,16 +26,20 @@ let pokemonRepository = (function () {
 
   function addListItem(pokemon){
     let pokemonList = document.querySelector(".pokemon-list");
-    let listpokemon = document.createElement("card");
+    let listpokemon = document.createElement("li");
     listpokemon.classList.add('group-list-item');
+    listpokemon.classList.add('col-12');
+    listpokemon.classList.add('col-md-8');
+
 
 
     // Display pokemon in button
 
     let button = document.createElement("button");
     button.innerText = pokemon.name;
-    button.classList.add("button-class");
+
     button.classList.add('btn');
+    button.classList.add('btn-light');
     button.classList.add('col');
     button.setAttribute('data-bs-target', '#modal-container');
     button.setAttribute('data-bs-toggle', 'modal');
@@ -220,9 +224,6 @@ function getPokemon(){
   }
 }
 
-//validate forms
-
-
 
 
 pokemonRepository.loadList().then(function () {
@@ -230,30 +231,3 @@ pokemonRepository.loadList().then(function () {
     pokemonRepository.addListItem(pokemon);
   });
 });
-
-(function() {
-  let form = document.querySelector('#addPokemon');
-  let emailInput = document.querySelector('#newPokemon');
-  let passwordInput = document.querySelector('#newPokemonHeight');
-
-  function validateEmail() {
-
-    return false;
-  }
-
-  function validatePassword() {
-
-    return false;
-  }
-
-  function validateForm() {
-    return validateEmail() && validatePassword();
-  }
-
-  form.addEventListener('add', (e) => {
-    e.preventDefault(); // Do not submit to the server
-    if (validateForm()) {
-      alert('Success!');
-    }
-  })
-})();
