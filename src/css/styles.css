@@ -1,0 +1,22 @@
+body {
+  background-color: #ffe030;
+  color: #3c5aa6;
+  font-family: 'Press Start 2P', cursive;
+  text-align:center;
+  font-size:1vw;
+
+}
+
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+img {
+  width: 25%;
+  height: auto;
+  align: center;
+}
