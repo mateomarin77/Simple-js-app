@@ -1,6 +1,6 @@
 # Simple JS app
 
-A simple JS app with an API
+A simple PokeDex built with JavaScript, HTML and CSS. It uses an external RESTful API to fetch our favourite Pokemons and display their details
 
 ## Getting Started
 
@@ -16,14 +16,17 @@ Clone https://github.com/mateomarin77/simple-js-app repository
 
 ## Built With
 
-* [Javascript](http://www.https://www.javascript.com/) 
+- [Javascript](http://www.https://www.javascript.com/)
+- jQuery
+- Bootstrap
+- Prettier
+- ESLint
 
 ## Authors
 
-* **Mateo Marin** - [mateomarin977](https://github.com/mateomarin77)
-
+- **Mateo Marin** - [mateomarin977](https://github.com/mateomarin77)
 
 ## Acknowledgments
 
-* Future Pokemon App
-* CarrerFoundry
+- Javascript Exercise Pokemon App
+- CarrerFoundry

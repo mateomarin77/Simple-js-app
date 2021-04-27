@@ -2,21 +2,36 @@ body {
   background-color: #ffe030;
   color: #3c5aa6;
   font-family: 'Press Start 2P', cursive;
-  text-align:center;
-  font-size:1vw;
-
+  text-align: center;
+  font-size: 1vw;
 }
-
 .selector-for-some-widget {
   box-sizing: content-box;
 }
-
-*, *:before, *:after {
+*,
+:after,
+:before {
   box-sizing: border-box;
 }
-
 img {
   width: 25%;
   height: auto;
   align: center;
+}
+.btn {
+  background-color: #396bba;
+  border: none;
+  color: #fff;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 5px;
+}
+.btn:hover {
+  background-color: #1e90ff;
+  color: #f2c005;
+}
+.list-group {
+  display: inline;
+  margin-top: 30px;
 }
